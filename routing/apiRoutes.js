@@ -12,7 +12,7 @@ module.exports = function(app) {
   });
 
   // API POST REQUEST FOR DATA
-
+// Infinity for no max difference
   app.post("/api/friends", function(req, res) {
     var bestMatch = {
       name: "",
@@ -32,25 +32,25 @@ module.exports = function(app) {
 
       console.log(currentFriend.name);
 
-      //
+      //Use for loop to iterate through current friend score list and store in currentFriendScore variable
       for (var p = 0; p < currentFriend.scores.length; p++) {
         var currentFriendScore = currentFriend.scores[p];
         var currentUserScore = userScores[p];
-
+        // Measure total difference in user scores with absolute number
         totalDifference += Math.abs(
           parseInt(currentUserScore) - parseInt(currentFriendScore)
         );
       }
-
+      // Set determining factors in if statement to decide if best match
       if (totalDifference <= bestMatch.friendsDifference) {
         bestMatch.name = currentFriend.name;
         bestMatch.photo = currentFriend.photo;
         bestMatch.friendDifference = totalDifference;
       }
     }
-
+    // push friends data
     friends.push(userData);
-
+    // Join data for best match 
     res.join(bestMatch);
 
   });
