@@ -52,3 +52,6 @@ var friends = [
     scores: ["3", "3", "4", "2", "2", "1", "3", "2", "2", "3"]
   }
 ];
+
+// Export the array to other modules that require the data
+module.exports = friends;
