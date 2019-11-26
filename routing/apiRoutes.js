@@ -21,6 +21,20 @@ module.exports = function(app) {
             photo: "",
             friendDifference: Infinity
         };
-        
+
+        //
+        var userData = req.body;
+        var userScores = userData.scores;
+
+        var totalDifference = 0;
+
+        for (var i = 0; i < friends.length; i++) {
+            var currentFriend = friends[i];
+            totalDifference = 0;
+
+            console.log(currentFriend.name);
+
+            
+        }
     })
 }
