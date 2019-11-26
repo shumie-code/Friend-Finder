@@ -7,13 +7,190 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/styledos.css">
     <title>Trailer Park Survey</title>
 </head>
 
 <body>
     
-
+<div class="container">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Find Friend</h3>
+                    <button type="button" class="close" d="close-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="match-name"></h4>
+                    <img id="match-image" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="close-modal" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron text-center">
+                <h1 class=""><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder</h1>
+                <h3>Here are the questions Randy prepared!</h3>
+                <hr>
+                <a href="/"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
+              </div>
+            
+              <div class="row">
+                <div class="col-lg-12">
+            
+            <!-- Reservation Page -->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Friend Your Best Friend</h4>
+                </div>
+                  
+                <div class="panel-body">
+            
+                  <form role="form" id="friend-form">
+                    <div class="form-group">
+                      <label for="">Name<span style="color: red">*</span></label>
+                      <input type="text" class="form-control" id="name" required>
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="">Link to Photo<span style="color: red">*</span></label>
+                      <input type="text" class="form-control" id="phone" required>
+                    </div>
+            
+                    <h3>Question 1</h3>
+                    <h4>Do you have a job?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question1">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 2</h3>
+                    <h4>Do you own a Trailer?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question2">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 3</h3>
+                    <h4>Do you like cheeseburgers?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question3">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 4</h3>
+                    <h4>Are you a former convict?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question4">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 5</h3>
+                    <h4>Do you have a daughter?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question5">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 6</h3>
+                    <h4>Are you the alcohol?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question6">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 7</h3>
+                    <h4>Would you describe yourself a businessman? <span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question7">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 8</h3>
+                    <h4>Do you like to rap?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question8">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 9</h3>/
+                    <h4>Did you pass grade 10<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question9">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+            
+                    <h3>Question 10</h3>
+                    <h4>Have you ever owned a sock puppet?<span style="color: red">*</span></h4>
+                    <select class="custom-select" id="question10">
+                      <option disabled selected>Select an option</option>
+                      <option value="1">1 (Strongly Agree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <br/><br/>
+                    <button type="submit"  id="add-btn" class="btn btn-primary submit" data-toggle="modal" data-target=".bd-example-modal-lg">Submit</button>
+                  </form>
+                </div>
+              </div>
+              </div>
+            </div>
+              <div class="footer text-center">
+                <a href="/api/friends">API Friends List</a>
+                <span>|</span>
+                <!-- <a href="/api/clear">Clear Friends</a>
+                <span>|</span> -->
+                <a href="https://github.com/shumie-code/friend-finder">GitHub Repo</a>
+                <br>
+              </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
 
 
