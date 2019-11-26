@@ -8,6 +8,17 @@ body {
 }
 
 .jumbotron {
+  margin-top: 175px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+  h3 {
+      font-size: 18px;
+  }
+
+
+.jumbotron {
   
   border-top: red 3px solid;
   border-left: red 3px solid;
@@ -41,4 +52,16 @@ body {
   padding-top: 150px;
 }
 
-#home .
+
+@media only screen and (max-width: 992px) {
+  .jumbotron {
+      margin-left: 100px;
+      margin-right: 100px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .jumbotron {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
