@@ -49,6 +49,9 @@ module.exports = function(app) {
       }
     }
 
-    
+    friends.push(userData);
+
+    res.join(bestMatch);
+
   });
 };
