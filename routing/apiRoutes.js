@@ -1,7 +1,7 @@
 // Linking the routes to a series of data sources
 // the data sources hold arrays of information on friend data
 
-var friendData = require("../app/friends");
+var friendData = require("../app/friends.js");
 
 // ROUTING
 
