@@ -1,7 +1,7 @@
 // Dependencies
 // Series of NPM packages that we wll use for server functionality
 var express = require("express");
-
+var path = require("path");
 
 // Tells node this is an express server
 var app = express();
@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Router
+app.use(express.static(path.join(__dirname, "/public/")));
 // Directs server to the route files that give server a map of how to respond when users visit or request data from various urls
 
 require("./routing/apiRoutes")(app);

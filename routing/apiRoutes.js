@@ -1,7 +1,7 @@
 // Linking the routes to a series of data sources
 // the data sources hold arrays of information on friend data
 
-var friends = require("../app/friends.js");
+var friends = require("../app/data/friends.js");
 
 // ROUTING
 
@@ -62,7 +62,7 @@ var bestMatch = {
      var bfriendScore = friends[i].scores.reduce((a, b) => a + b, 0); 
      console.log("Total friend score " + bfriendScore);
      totalDifference += Math.abs(sum - bfriendScore);
-     console.log("-----------> " totalDifference);
+     console.log("----------->  totalDifference");
 
      // If the sum of differences is less then the differences of the current "best match"
      // We are looking for the smallest difference (most similar) peoples interests
@@ -89,26 +89,8 @@ var bestMatch = {
    console.log(userData);
    //Return JSON
 
-      //Use for loop to iterate through current friend score list and store in currentFriendScore variable
-      for (var p = 0; p < currentFriend.scores.length; p++) {
-        var currentFriendScore = currentFriend.scores[p];
-        var currentUserScore = userScores[p];
-        // Measure total difference in user scores with absolute number
-        totalDifference += Math.abs(
-          parseInt(currentUserScore) - parseInt(currentFriendScore)
-        );
-      }
-      // Set determining factors in if statement to decide if best match
-      if (totalDifference <= bestMatch.friendsDifference) {
-        bestMatch.name = currentFriend.name;
-        bestMatch.photo = currentFriend.photo;
-        bestMatch.friendDifference = totalDifference;
-      }
-    }
-    // push friends data
-    friends.push(userData);
-    // Join data for best match 
-    res.join(bestMatch);
+   res.json(bestMatch);
 
   });
+
 };
