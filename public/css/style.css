@@ -32,7 +32,7 @@ body {
 }
 
 #home {
-  background: url(../app/images/wholepark.jpg);
+  background: url(/app/images/wholepark.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
