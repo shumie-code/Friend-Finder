@@ -26,7 +26,7 @@ app.post('/api/friends', function(req, res) {
 
   // Here we take the result of the users survey post and parse it
   var userData = req.body;
-  var userNmae = userData.name;
+  var userName = userData.name;
   var userScores = userData.scores;
   // Convert the users scores to a number from a string
   var b = userScores.map(function(item) {
