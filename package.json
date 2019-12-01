@@ -1,28 +1,33 @@
-"name": "friend-finder",
-"version": "1.0.0",
-"description": "buddy finder",
-"main": "server.js",
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "start": "node server.js"
-},
-"repository": {
-  "type": "git",
-  "url": "git+https://github.com/shumie-code/friend-finder.git"
-},
-"keywords": [
-  "friend-finder",
-  "buddy"
-],
-"author": "Petros Shumie",
-"license": "ISC",
-"bugs": {
-  "url": "https://github.com/shumie-code/friend-finder/issues"
-},
-"homepage": "https://github.com/shumie-code/friend-finder#readme",
-"dependencies": {
-  "express": "^4.17.1",
-  "path": "^0.12.7",
- "node": "10.15.2"
-}
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "App for finding your best buddy in the park!",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shumie-code/Friend-Finder.git"
+  },
+  "keywords": [
+    "Buddy",
+    "Friends",
+    "Trailer",
+    "Park"
+  ],
+  "author": "Petros Shumie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shumie-code/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/shumie-code/Friend-Finder#readme"
 }
