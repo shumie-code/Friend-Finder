@@ -1,6 +1,6 @@
 // array for friends 
 
-var friendsArray = [
+var friends = [
   {
     name: "Randy",
     photo: "images/randy.jpg",
@@ -54,4 +54,4 @@ var friendsArray = [
 ];
 
 // Export the array to other modules that require the data
-module.exports = friendsArray;
+module.exports = friends;
