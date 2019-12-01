@@ -1,7 +1,7 @@
 // Linking the routes to a series of data sources
 // the data sources hold arrays of information on friend data
 
-var friends = require("../app/data/friends");
+var friends = require("../data/friends.js");
 console.log("apiRoutes.js is linked");
 console.log("friends is ");
 console.log(friends);
@@ -61,7 +61,7 @@ app.post("/api/friends/", function(req, res) {
 
   console.log("minValue is " + minValue);
 
-  var bestMatch = friendsData[minValue];
+  var bestMatch = friends[minValue];
 
   // console.log("Best match: ");
   // console.log(bestMatch);

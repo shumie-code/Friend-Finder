@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Survey Questions</h1>
+
+        <hr />
+        <form>
+            <h2>About You</h2>
+            <h6>Name (Required):</h6>
+            <input type="text" id="name" class="form-control">
+            <h6>Link to Photo (Required): </h6>
+            <input type="text" id="photo" class="form-control">
+
+            <hr />
+
+
+            <div class="form-group">
+                <div class="question">1) Your mind is always buzzing with unexplored ideas and plans.</div>
+                <select class="form-control" id="question1">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">2) Generally speaking, you rely more on your experience than your imagination.
+                </div>
+                <select class="form-control" id="question2">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="question">3) You find it easy to stay relaxed and focused even when there is some pressure.
+                </div>
+                <select class="form-control" id="question3">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="question">4) You rarely do something just out of sheer curiosity.
+                </div>
+                <select class="form-control" id="question4">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">5) People can rarely upset you.
+                </div>
+                <select class="form-control" id="question5">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">6) It is often difficult for you to relate to other people’s feelings.
+                </div>
+                <select class="form-control" id="question6">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">7) In a discussion, truth should be more important than people’s sensitivities.
+                </div>
+                <select class="form-control" id="question7">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">8) You rarely get carried away by fantasies and ideas.
+                </div>
+                <select class="form-control" id="question8">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">9) You think that everyone’s views should be respected regardless of whether they
+                    are supported by facts or not.
+                </div>
+                <select class="form-control" id="question9">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="question">10) You feel more energetic after spending time with a group of people.
+                </div>
+                <select class="form-control" id="question10">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
+
+        </form>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" id="submitButton" data-toggle="modal"
+            data-target="#bestMatchModal">
+            Submit
+        </button>
+        ​
+        <!-- Modal -->
+        <div class="modal fade" id="bestMatchModal" tabindex="-1" role="dialog" aria-labelledby="yourMatch"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title" id="yourMatch">Your Match!</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+// function runFriendQuery() {
+//     // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+//     $.ajax({ url: "/api/friends", method: "GET" })
+//       .then(function(friendsData) {
+//         console.log("friendsData is ");
+//         console.log(friendsData);
+//     });
+//   }
+        $("#submitButton").on("click", function (event) {
+            event.preventDefault();
+            var scoresArray = [];
+            for (var i = 1; i < 11; i++) {
+                scoresArray.push(parseInt($("#question" + i).val()));
+            }
+            console.log("scoresArray[0] type: ");
+            console.log(typeof(scoresArray[0]));
+            var surveyAnswers = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: scoresArray
+            };
+            console.log("surveyAnswers.scores[0] type: ");
+            console.log(typeof(surveyAnswers.scores[0]));
+            console.log("From inside survey.html, surveyAnswers is ");
+            console.log(surveyAnswers);
+            $.post("/api/friends", surveyAnswers, function (data) {
+                console.log("Inside survey.html, inside the post, the callback (data) is ");
+                console.log(data);
+                $("#yourMatch").html("<h6>Your Match:</h6> <h3>" + data.name + "</h3> <img src='" + data.photo + "' class='img-fluid'  id='friend-photo' alt='A photo of " + data.name + "' />");
+            });
+            
+            
+        });
+    </script>
+</body>
+
+
+
+</html>
