@@ -1,8 +1,0 @@
-{
-    "name": "Friend-finder",
-    "description": "A survey to determine your best buddy",
-    "repository": "https://github.com/shumie-code/Friend-Finder",
-    "keywords": ["node", "express", "heroku"],
-    "image": "heroku/nodejs"
-  }
-  
