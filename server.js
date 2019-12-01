@@ -14,8 +14,6 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Router
-app.use(express.static("public"));
 // Directs server to the route files that give server a map of how to respond when users visit or request data from various urls
 
 require("./routing/apiRoutes")(app);

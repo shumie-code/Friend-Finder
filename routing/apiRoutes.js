@@ -2,95 +2,73 @@
 // the data sources hold arrays of information on friend data
 
 var friends = require("../app/data/friends");
-
+console.log("apiRoutes.js is linked");
+console.log("friends is ");
+console.log(friends);
 // ROUTING
 
 module.exports = function(app) {
   // API GET REQUEST RETURN DATA IN JSON
-  app.get("/api/friends", function(req, res) {
+  app.get("/api/friends/", function(req, res) {
     res.json(friends);
   });
 
   // API POST REQUEST FOR DATA
-// Infinity for no max difference
-  app.post("/api/friends", function(req, res) {
-    
-    //Comparing users for best match
-    var totalDifference = 0;
+app.post("/api/friends/", function(req, res) {
+  
+  var userData = req.body
 
-    //OBJECT for best match parametershttps://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiDsYGM843mAhUsWN8KHTfRBoMQjRx6BAgBEAQ&url=https%3A%2F%2Fscreenrant.com%2Ftrailer-park-boys-main-characters-details%2F&psig=AOvVaw3tfCGMuxSD62BwSahjjWcK&ust=1575064608731684
-var bestMatch = {
-  name: "",
-  photo: "",
-  friendDifference: Infinity
-};
+  console.log("userData is ");
+  console.log(userData);
 
-//Take user survey post and parse data
-   var userData = req.body;
-   var userName = userData.name;
-   var userScores = userData.scores;
+  for(var i=0; i<10; i++) {
+    userData.scores[i] = parseInt(userData.scores[i]);
+  }
 
-   //convert user score to a number
-   var b = userScores.map(function(item) {
-     return parseInt(item, 10);
-   });
+  console.log("friends[0].scores is " );
+  console.log("friends[0].scores");
+  console.log("\n ------------- \n");
 
-   //Object for user data
-   userData = {
-     "name": req.body.name,
-     "photo": req.body.photo,
-     "scores": b
-   };
+  console.log("userData.scores is ");
+  console.log("userData.scores");
 
-   console.log("Name: " + userName);
-   console.log("User Score " + userScores);
+  var totalDifference = [];
 
-   // convert the user scores to a number by adding all numbers in array
-   var sum = b.reduce((a, b) => a + b, 0);
-   console.log("Sum of users score " + sum);
-   console.log("Best match friend diff " + bestMatch.friendDifference);
+  for (var i=0; i<friends.length; i++) {
+    totalDifference[i] = 0;
+  }
+
+  console.log("Total difference is ");
+  console.log(totalDifference);
+
+  console.log("userData.scores.length is ");
+  console.log(userData.score.length);
+
+  for (var i=0; i<friends.length; i++){
+    for(var j=0; j<userData.scores.length; j++){
+      totalDifference[i]+= Math.abs((friends[i].scores[j] - userData.scores[j]));
+    }
+    console.log("totalDifference[" + i + "] is ");
+    console.log(totalDifference[i]);
+  }
+
+  console.log("totalDifference is ");
+  console.log(totalDifference);
 
 
-   console.log("-----------------------------");
 
-   // Iterate through for loop to consider all friend possibilities from database.
-   for (var i = 0; i < friends.length; i++) {
-     totalDifference = 0;
-     console.log(friends[i].name);
-     console.log("Best match friend diff " + bestMatch.friendDifference);
+  var minValue = totalDifference.indexOf(Math.min.apply(null,totalDifference));
 
-     var bfriendScore = friends[i].scores.reduce((a, b) => a + b, 0); 
-     console.log("Total friend score " + bfriendScore);
-     totalDifference += Math.abs(sum - bfriendScore);
-     console.log("----------->  totalDifference");
+  console.log("minValue is " + minValue);
 
-     // If the sum of differences is less then the differences of the current "best match"
-     // We are looking for the smallest difference (most similar) peoples interests
-     if (totalDifference <= bestMatch.friendDifference) {
-       // Reset the bestMatch to the new friend
-       bestMatch.name = friends[i].name;
-       bestMatch.photo = friends[i].photo;
-       bestMatch.friendDifference = totalDifference;
-       // If someone runs the application a second time they wont get themselves 
-       if (bestMatch.name == userName) {
-         bestMatch.name = "Phil Collins";
-         bestMatch.photo = "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiDsYGM843mAhUsWN8KHTfRBoMQjRx6BAgBEAQ&url=https%3A%2F%2Fscreenrant.com%2Ftrailer-park-boys-main-characters-details%2F&psig=AOvVaw3tfCGMuxSD62BwSahjjWcK&ust=1575064608731684";
-         bestMatch.friendDifference = 10;
-       }
-     }
-     console.log(totalDifference + " Total Difference");
+  var bestMatch = friendsData[minValue];
 
-   }
-   console.log(bestMatch);
+  // console.log("Best match: ");
+  // console.log(bestMatch);
 
-  // Finally save the users data to the database (this has to happen after the check.)
-   friends.push(userData);
-   console.log("New user added");
-   console.log(userData);
-   //Return JSON
+  res.json(bestMatch);
 
-   res.json(bestMatch);
 
-  });
+});
 
-};
+}
